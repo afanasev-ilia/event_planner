@@ -22,8 +22,8 @@ class Event(models.Model):
         upload_to='events/',
         help_text='добавьте изображение',
     )
-    date = models.DateTimeField(
-        help_text='выберите дату и время мероприятия',
+    date = models.DateField(
+        help_text='выберите дату мероприятия',
     )
 
     class Meta:

@@ -3,6 +3,7 @@ from django.contrib.auth.base_user import BaseUserManager
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from organizations.models import Organization
 
 class UserManager(BaseUserManager):
     use_in_migrations = True
@@ -39,6 +40,17 @@ class User(AbstractUser):
     phone_number = models.CharField(
         'Номера телефона пользователя',
         max_length=20,
+        null=True,
+        blank=True,
+    )
+    organization = models.ForeignKey(
+        Organization,
+        related_name='employee',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name='организация',
+        help_text='укажите организацию в которой состоит пользователь',
     )
 
     objects = UserManager()

@@ -12,6 +12,7 @@ class UserAdmin(admin.ModelAdmin):
         'first_name',
         'last_name',
         'password',
+        'organization',
     )
     list_editable = (
         'email',
