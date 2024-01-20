@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_filters',
     'djoser',
+    'drf_yasg',
     'events.apps.EventsConfig',
     'organizations.apps.OrganizationsConfig',
     'rest_framework',
