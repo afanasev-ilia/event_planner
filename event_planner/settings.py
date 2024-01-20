@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djoser',
+    'events.apps.EventsConfig',
     'organizations.apps.OrganizationsConfig',
     'rest_framework',
+    'sorl.thumbnail',
     'users.apps.UsersConfig',
 ]
 
@@ -171,3 +173,7 @@ DJOSER = {
         'user_create': 'api.serializers.CustomUserCreateSerializer',
     },
 }
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
