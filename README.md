@@ -10,7 +10,7 @@ http://127.0.0.1:8000/redoc/
 
 Документация в формате Swagger: 
 ```HTTP
-http://127.0.0.1:8000/swagger/.
+http://127.0.0.1:8000/swagger/
 ```
 
 ## Технологии
@@ -36,12 +36,12 @@ docker-compose up -d --build
 
 Выполняем миграции:
 ```bash
-docker-compose exec backend python manage.py migrate
+docker-compose exec event_planner python manage.py migrate
 ```
 
 Создаем суперппользователя:
 ```bash
-docker-compose exec backend python manage.py createsuperuser
+docker-compose exec event_planner python manage.py createsuperuser
 ```
 
 Останавливаем собранные контейнеры:
