@@ -34,11 +34,6 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractUser):
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
-
-    objects = UserManager()
-
     email = models.EmailField(_('email address'), unique=True)
     username = None
     phone_number = models.CharField(
@@ -46,10 +41,15 @@ class User(AbstractUser):
         max_length=20,
     )
 
+    objects = UserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
     class Meta:
         ordering = ['id']
         verbose_name = 'пользователь'
         verbose_name_plural = 'пользователи'
 
     def __str__(self) -> str:
-        return self.username
+        return self.email
