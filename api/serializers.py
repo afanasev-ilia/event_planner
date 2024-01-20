@@ -19,8 +19,28 @@ class Base64ImageField(serializers.ImageField):
         return super().to_internal_value(data)
 
 
+class EmployeeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('email',)
+
+
+class OrganizationEventSerializer(serializers.ModelSerializer):
+    employee = EmployeeSerializer(read_only=True, many=True)
+    organizations_details = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Organization
+        fields = ('title', 'organizations_details', 'employee')
+ 
+    def get_organizations_details(self, obj):
+        return f'{obj.postcode}, {obj.address}'
+
+
 class EventSerializer(serializers.ModelSerializer):
     image = Base64ImageField(required=True, allow_null=False)
+    organizations = OrganizationEventSerializer(read_only=True, many=True)
 
     class Meta:
         model = Event

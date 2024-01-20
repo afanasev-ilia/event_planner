@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 from organizations.models import Organization
 
+
 class UserManager(BaseUserManager):
     use_in_migrations = True
 
