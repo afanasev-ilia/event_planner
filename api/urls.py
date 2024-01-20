@@ -1,11 +1,19 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from api.views import OrganizationCreate, EventCreate
+from api.views import OrganizationCreateViewSet, EventCreateRetrieveListViewSet
 
 router = DefaultRouter()
-router.register('events', EventCreate, basename='events')
-router.register('organizations', OrganizationCreate, basename='organizations')
+router.register(
+    'events',
+    EventCreateRetrieveListViewSet,
+    basename='events',
+)
+router.register(
+    'organizations',
+    OrganizationCreateViewSet,
+    basename='organizations',
+)
 
 urlpatterns = [
     path('', include(router.urls)),
