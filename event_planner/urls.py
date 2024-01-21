@@ -2,9 +2,6 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-
-from chat.apps import ChatConfig
-
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -13,7 +10,6 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('chat/', include('chat.urls', namespace=ChatConfig.name)),  # поменять адресс чата?
     path('api/v1/', include('api.urls'), name='api'),
 ]
 

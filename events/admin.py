@@ -15,9 +15,9 @@ class EventAdmin(admin.ModelAdmin):
     filter_horizontal = ('organizations',)
     search_fields = ('title',)
     list_filter = ('title',)
-    readonly_fields = ("get_image",)
+    readonly_fields = ('get_image',)
 
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.image.url} width="100" height="110"')
 
-    get_image.short_description = "Изображение"
+    get_image.short_description = 'Изображение'

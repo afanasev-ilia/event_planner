@@ -13,6 +13,11 @@ http://127.0.0.1:8000/redoc/
 http://127.0.0.1:8000/swagger/
 ```
 
+Чат полозователей доступен: 
+```HTTP
+http://127.0.0.1:8000/api/v1/chat/
+```
+
 ## Технологии
 
 Python 3.9.10
@@ -47,6 +52,12 @@ docker-compose exec event_planner python manage.py createsuperuser
 Останавливаем собранные контейнеры:
 ```bash
 docker-compose down -v 
+```
+
+Для корректной работы чата в тестовом режиме необходимо
+добавить JWT-токен в Local storage
+```
+Token='********************************'
 ```
 
 ## Шаблон наполнения .env
