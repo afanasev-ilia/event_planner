@@ -10,7 +10,7 @@ from djangochannelsrestframework.observer.generics import (
 
 from chat.models import Message, Room
 from users.models import User
-from api.serializers import (
+from chat.serializers import (
     MessageSerializer,
     RoomSerializer,
     UserChatSerializer,
