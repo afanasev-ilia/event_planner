@@ -1,3 +1,5 @@
+from django.urls import include, path
+
 from rest_framework.routers import DefaultRouter
 
 from events.views import EventCreateRetrieveListViewSet
@@ -8,3 +10,8 @@ router.register(
     EventCreateRetrieveListViewSet,
     basename='events',
 )
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
+
