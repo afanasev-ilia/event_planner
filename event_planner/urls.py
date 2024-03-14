@@ -3,14 +3,23 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import permissions
+from rest_framework.routers import DefaultRouter
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.conf.urls import url
 
+from events.views import EventCreateRetrieveListViewSet
+
+router = DefaultRouter()
+router.register(
+    'events',
+    EventCreateRetrieveListViewSet,
+    basename='events',
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/', include('api.urls'), name='api'),
+    path('api/v1/', include(router.urls)),
 ]
 
 if settings.DEBUG:
