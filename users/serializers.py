@@ -20,10 +20,3 @@ class UserChatSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id', 'username', 'email', 'password']
         extra_kwargs = {'password': {'write_only': True}}
-
-
-# class EmployeeSerializer(serializers.ModelSerializer):
-
-#     class Meta:
-#         model = User
-#         fields = ('email',)
