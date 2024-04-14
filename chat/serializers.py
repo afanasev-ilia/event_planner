@@ -1,12 +1,6 @@
-import base64
 from rest_framework import serializers
 
-from django.core.files.base import ContentFile
-from djoser.serializers import UserCreateSerializer
-
-from events.models import Event
 from chat.models import Message, Room
-from organizations.models import Organization
 from users.models import User
 
 
