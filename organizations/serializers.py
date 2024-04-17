@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from organizations.models import Organization
-from users.serializers import Empllo
+# from users.serializers import Emplloy
 
 
 class OrganizationEventSerializer(serializers.ModelSerializer):

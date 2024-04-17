@@ -9,6 +9,7 @@ from drf_yasg import openapi
 from django.conf.urls import url
 
 from events.views import EventCreateRetrieveListViewSet
+from organizations.views import OrganizationCreateViewSet
 
 router = DefaultRouter()
 router.register(
@@ -16,6 +17,12 @@ router.register(
     EventCreateRetrieveListViewSet,
     basename='events',
 )
+router.register(
+    'organizations',
+    OrganizationCreateViewSet,
+    basename='organizations',
+)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
