@@ -12,9 +12,13 @@ Event Planner – это удобное приложение для органи
 
 ## Технологии
 
-Python 3.9.10
-Django 3.2
-Django REST framework 3.12.4
+![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)
+![Django Version](https://img.shields.io/badge/django-3.2-green.svg)
+![Django REST](https://img.shields.io/badge/django%20rest%20framework-3.12.4-red.svg)
+![Django Channels REST](https://img.shields.io/badge/django%20channels%20rest-1.2.0-9cf.svg)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 
 ### Документация в формате Redoc:
 ```HTTP
